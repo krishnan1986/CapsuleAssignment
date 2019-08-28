@@ -7,7 +7,6 @@ import { ViewTaskComponent } from './view-task/view-task.component';
 import { UpdateTaskComponent } from './update-task/update-task.component';
 import { TaskHomeComponent } from './task-home/task-home.component';
 import { AddTaskComponent } from './add-task/add-task.component';
-import {AlertModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import {AlertModule} from 'ngx-bootstrap';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AlertModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
