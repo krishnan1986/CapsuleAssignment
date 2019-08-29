@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClientService } from '../service/http-client.service';
+import { task } from '../model/Task';
 
 @Component({
   selector: 'app-view-task',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewTaskComponent implements OnInit {
 
-  constructor() { }
+   taskList:task[];
+  constructor(private httpClientService: HttpClientService) {
+
+    
+   }
 
   ngOnInit() {
+    this.httpClientService.getTaskList().subscribe
+    (
+      response => this.handle(response),
+
+    );
+  }
+
+  handle(response)
+  {
+  this.taskList=response;
   }
 
 }

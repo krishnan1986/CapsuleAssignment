@@ -29,4 +29,27 @@
     </tr>
     
   </table>
+
+  <table border="1">
+      <thead></thead>
+      <tr>
+        <th>Task Name</th>
+        <th>Parent task Name</th>
+        <th>Priority</th>
+        <th>Start date</th>
+        <th>End date</th>
+      </tr>
+      <tbody>
+          <tr *ngFor="let basictask of tasks">
+              <td>{{basictask.name}}</td>
+              <td>{{basictask.parentTask}}</td>
+              <td>{{basictask.priority}}</td>
+              <td>{{basictask.startDate}}</td>
+              <td>{{basictask.endDate}}</td>
+              <td><button class="btn btn-info"> Edit</button></td>
+              <td><button class="btn btn-info"> End Task</button></td>
+              
+          </tr>
+      </tbody>
+    </table>
 </div>
