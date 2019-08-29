@@ -27,9 +27,19 @@
       <input type="date" style="width:155px">
       </div>
     </tr>
+
+
     
   </table>
 
+  <!-- <form id="viewForm">
+ <button class="btn btn-info" (click)="search()">
+  Search 
+ </button>
+
+
+  </form> -->
+   <div *ngIf="isSearched"> 
   <table border="1">
       <thead></thead>
       <tr>
@@ -52,4 +62,5 @@
           </tr>
       </tbody>
     </table>
+  </div>
 </div>

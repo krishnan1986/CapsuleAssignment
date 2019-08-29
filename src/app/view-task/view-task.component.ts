@@ -9,7 +9,9 @@ import { task } from '../model/Task';
 })
 export class ViewTaskComponent implements OnInit {
 
+   isSearched: Boolean =false;
    taskList:task[];
+   
   constructor(private httpClientService: HttpClientService) {
 
     
@@ -27,5 +29,7 @@ export class ViewTaskComponent implements OnInit {
   {
   this.taskList=response;
   }
+
+  
 
 }
