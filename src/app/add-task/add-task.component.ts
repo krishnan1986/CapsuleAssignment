@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClientService } from '../service/http-client.service';
+import { task } from '../model/Task';
 
 @Component({
   selector: 'app-add-task',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddTaskComponent implements OnInit {
 
-  constructor() { }
+  taskObj: task= new task("","",0,new Date,new Date);
+  postUrl:string ="http://localhost:8111/addTask"
+
+  constructor( private httpClientService:HttpClientService) {
+
+    
+  }
 
   ngOnInit() {
+    console.log('inside add task comp');
   }
+
+  addTaskService():void  {
+     this.httpClientService.addTask(this.taskObj)
+        .subscribe( data => {
+          alert("task created successfully.");
+        });
+
+  };
+  
 
 }

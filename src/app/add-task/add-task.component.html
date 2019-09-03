@@ -2,7 +2,7 @@
   <form id="addTaskForm" action="POST">
   <table>
     <tr>
-      <label>Task:</label> 
+      <label>Task ID:</label> 
        <input type="text" id="name"/><br>
       </tr>
      <tr>
@@ -17,7 +17,7 @@
         </div>
      </tr>
     <tr>
-     <label>Parent Task:</label>
+     <label>Parent Task ID:</label>
      <input type="text"/>
     </tr>
     <tr>
@@ -30,7 +30,7 @@
          </tr>
   </table>
   
-  <button type="button" class="btn btn-primary mr-1">Add Task</button>
+  <button type="button" class="btn btn-primary mr-1" (click)="addTaskService()">Add Task</button>
 
   <button type="reset" class="btn btn-primary">Reset</button>
 

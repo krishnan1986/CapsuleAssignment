@@ -10,7 +10,7 @@ import { task } from '../model/Task';
 export class ViewTaskComponent implements OnInit {
 
    isSearched: Boolean =false;
-   taskList:task[];
+   tasks:task[];
    
   constructor(private httpClientService: HttpClientService) {
 
@@ -27,7 +27,7 @@ export class ViewTaskComponent implements OnInit {
 
   handle(response)
   {
-  this.taskList=response;
+  this.tasks=response;
   }
 
   
