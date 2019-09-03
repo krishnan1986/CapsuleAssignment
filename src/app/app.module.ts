@@ -7,6 +7,7 @@ import { ViewTaskComponent } from './view-task/view-task.component';
 import { UpdateTaskComponent } from './update-task/update-task.component';
 import { TaskHomeComponent } from './task-home/task-home.component';
 import { AddTaskComponent } from './add-task/add-task.component';
+import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http/';
 
 @NgModule({
@@ -20,6 +21,7 @@ import {HttpClientModule} from '@angular/common/http/';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],

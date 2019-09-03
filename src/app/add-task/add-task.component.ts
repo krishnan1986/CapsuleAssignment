@@ -9,7 +9,7 @@ import { task } from '../model/Task';
 })
 export class AddTaskComponent implements OnInit {
 
-  taskObj: task= new task("","",0,new Date,new Date);
+  model:task = new task("test","test",1,new Date(2013,12,1),new Date(2014,1,1));
   postUrl:string ="http://localhost:8111/addTask"
 
   constructor( private httpClientService:HttpClientService) {
@@ -22,7 +22,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   addTaskService():void  {
-     this.httpClientService.addTask(this.taskObj)
+     this.httpClientService.addTask(this.model)
         .subscribe( data => {
           alert("task created successfully.");
         });
