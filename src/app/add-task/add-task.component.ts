@@ -21,7 +21,8 @@ export class AddTaskComponent implements OnInit {
     console.log('inside add task comp');
   }
 
-  addTaskService():void  {
+  addTaskService(form):void  {
+    console.log(form.value)
      this.httpClientService.addTask(this.model)
         .subscribe( data => {
           alert("task created successfully.");
