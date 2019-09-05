@@ -22,4 +22,10 @@ export class HttpClientService {
    console.log('inside add task button fucntion');
     return this.http.post<task>("http://localhost:8111/addTask",task);
   }
+
+  searchTask(task)
+  {
+    console.log('inside search task button fucntion');
+    return this.http.post<task[]>("http://localhost:8111/searchTask",task);
+  }
 }

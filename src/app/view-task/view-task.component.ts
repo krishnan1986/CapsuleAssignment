@@ -11,6 +11,7 @@ export class ViewTaskComponent implements OnInit {
 
    isSearched: Boolean =false;
    tasks:task[];
+   model:task = new task("test",1,1,new Date(2013,12,1),new Date(2014,1,1));
    
   constructor(private httpClientService: HttpClientService) {
 
@@ -30,6 +31,12 @@ export class ViewTaskComponent implements OnInit {
   this.tasks=response;
   }
 
-  
+  searchTaskService(form):void  {
+    console.log(form.value)
+     this.httpClientService.searchTask(this.model.taskname)
+        .subscribe( data => {
+          alert("task searched successfully.");
+        });
 
-}
+  };
+  }

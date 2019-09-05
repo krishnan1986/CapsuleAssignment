@@ -9,7 +9,7 @@ import { task } from '../model/Task';
 })
 export class AddTaskComponent implements OnInit {
 
-  model:task = new task("test","test",1,new Date(2013,12,1),new Date(2014,1,1));
+  model:task = new task("test",1,1,new Date(2013,12,1),new Date(2014,1,1));
   postUrl:string ="http://localhost:8111/addTask"
 
   constructor( private httpClientService:HttpClientService) {
