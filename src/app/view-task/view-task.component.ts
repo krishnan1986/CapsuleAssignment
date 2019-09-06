@@ -12,7 +12,9 @@ export class ViewTaskComponent implements OnInit {
    isSearched: Boolean =false;
    tasks:task[];
    model:task = new task("test",1,1,new Date(2013,12,1),new Date(2014,1,1));
-   
+   editRowId: any;
+
+
   constructor(private httpClientService: HttpClientService) {
 
     
@@ -26,6 +28,9 @@ export class ViewTaskComponent implements OnInit {
     );
   }
 
+  toggle(id){
+    this.editRowId = id;
+  }
   handle(response)
   {
   this.tasks=response;

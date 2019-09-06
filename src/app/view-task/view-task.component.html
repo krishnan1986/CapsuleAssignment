@@ -51,12 +51,34 @@
       </tr>
       <tbody>
           <tr *ngFor="let basictask of tasks">
-              <td>{{basictask.name}}</td>
-              <td>{{basictask.parentTask}}</td>
-              <td>{{basictask.priority}}</td>
-              <td>{{basictask.startDate}}</td>
-              <td>{{basictask.endDate}}</td>
-              <td><button class="btn btn-info"> Edit</button></td>
+              <td *ngIf="basictask.rowId == editRowId">
+                
+                <input type="text" [(ngModel)]="basictask.name">
+              </td>
+              <td *ngIf="basictask.rowId !== editRowId" (click)="toggle(basictask.rowId)">
+                  {{basictask.rowId}}
+               </td>
+               <td *ngIf="basictask.rowId == editRowId">
+                
+                  <input type="text" [(ngModel)]="basictask.parentTask">
+                </td>
+              <td *ngIf="basictask.rowId !== editRowId" (click)="toggle(basictask.rowId)">{{basictask.parentTask}}</td>
+              <td *ngIf="basictask.rowId == editRowId">
+                
+                  <input type="text" [(ngModel)]="basictask.priority">
+                </td>
+              <td *ngIf="basictask.rowId !== editRowId" (click)="toggle(basictask.rowId)">{{basictask.priority}}</td>
+              <td *ngIf="basictask.rowId == editRowId">
+                
+                  <input type="text" [(ngModel)]="basictask.startDate">
+                </td>
+              <td *ngIf="basictask.rowId !== editRowId" (click)="toggle(basictask.rowId)">{{basictask.startDate}}</td>
+              <td *ngIf="basictask.rowId == editRowId">
+                
+                  <input type="text" [(ngModel)]="basictask.endDate">
+                </td>
+              <td *ngIf="basictask.rowId !== editRowId" (click)="toggle(basictask.rowId)">{{basictask.endDate}}</td>
+              <!-- <td><button class="btn btn-info"> Edit</button></td> -->
               <td><button class="btn btn-info"> End Task</button></td>
               
           </tr>
