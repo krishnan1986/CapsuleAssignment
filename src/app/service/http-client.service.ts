@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { task } from '../model/Task';
 import { map } from 'rxjs/operators';
 
@@ -46,5 +46,14 @@ export class HttpClientService {
   {
     console.log('inside search task button fucntion');
     return this.http.post<task[]>("http://localhost:8111/searchTask",task);
+  }
+
+  endTask(taskName:string)
+  {
+    let httpParams= new HttpParams();
+    httpParams.set('taskName',taskName);
+    let options ={ params:httpParams}
+    console.log("ending task by calling rest call delete"+ taskName);
+    return this.http.delete("http://localhost:8111/ViewTask/endTask",options);
   }
 }

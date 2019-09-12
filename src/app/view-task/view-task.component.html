@@ -79,7 +79,7 @@
                 </td>
               <td *ngIf="basictask.rowId !== editRowId" (click)="toggle(basictask.rowId)">{{basictask.endDate}}</td>
               <!-- <td><button class="btn btn-info"> Edit</button></td> -->
-              <td><button class="btn btn-info"> End Task</button></td>
+              <td><button class="btn btn-info" (click)="deleteTask(basictask.name)"> End Task</button></td>
               
           </tr>
       </tbody>

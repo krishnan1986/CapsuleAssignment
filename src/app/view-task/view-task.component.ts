@@ -44,4 +44,11 @@ export class ViewTaskComponent implements OnInit {
         });
 
   };
+
+  deleteTask(taskName: string)
+  {
+    console.log("ending task"+taskName);
+
+    this.httpClientService.endTask(taskName)
+  }
   }
