@@ -11,7 +11,7 @@ export class ViewTaskComponent implements OnInit {
 
    isSearched: Boolean =false;
    tasks:task[];
-   model:task = new task("test",1,1,new Date(2013,12,1),new Date(2014,1,1));
+   model:task = new task();
    editRowId: any;
 
 

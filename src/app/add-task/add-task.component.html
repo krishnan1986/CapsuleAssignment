@@ -1,6 +1,6 @@
 <div id="TaskBody" width="100%">
-  <form #taskForm="ngForm" (ngSubmit)="addTaskService(taskForm)" >
-    
+  <!-- <form #taskForm="ngForm" (ngSubmit)="addTaskService(taskForm)" > -->
+    <form>
   <table>
     <tr>
       <label for="taskname">Task Name:</label> 
@@ -29,8 +29,8 @@
          </tr>
   </table>
   
-  <input type="submit" class="btn btn-primary mr-1" value="Add Task"/>
-
+  <!-- <input type="submit" class="btn btn-primary mr-1" value="Add Task"/> -->
+  <button class="btn btn-success" (click)="addTaskService()">Add task</button>
   <button type="reset" class="btn btn-primary">Reset</button>
 
 </form>
